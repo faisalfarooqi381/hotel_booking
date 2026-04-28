@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow p-4">
+    <h2 class="text-success">Booking Confirmed 🎉</h2>
+
+    <hr>
+
+    <p><strong>Customer Name:</strong> {{ booking.customer.name }}</p>
+    <p><strong>Email:</strong> {{ booking.customer.email }}</p>
+    <p><strong>Phone:</strong> {{ booking.customer.phone }}</p>
+
+    <p><strong>Room Number:</strong> {{ booking.room.room_number }}</p>
+    <p><strong>Room Type:</strong> {{ booking.room.room_type.name }}</p>
+
+    <p><strong>Check-in:</strong> {{ booking.check_in }}</p>
+    <p><strong>Check-out:</strong> {{ booking.check_out }}</p>
+
+    <p><strong>Total Price:</strong> {{ booking.total_price }}</p>
+
+    <a href="{% url 'booking_voucher' booking.id %}" class="btn btn-success mt-3">
+     Download / Print Voucher
+    </a>
+    <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Book Room {{ room.room_number }}</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body shadow">
+                <form method="post" class="form-control">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label>Name</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone</label>
+                        {{ form.phone }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Check In</label>
+                        {{ form.check_in }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Check Out</label>
+                        {{ form.check_out }}
+                    </div>
+
+                    <button type="submit"  class="btn btn-success">Confirm Booking</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
